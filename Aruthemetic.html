@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Simple Adder</title>
+</head>
 <body>
 
-<input id="a" type="number">
-<input id="b" type="number">
-<button onclick="add()">Add</button>
+    <input id="a" type="number" placeholder="Enter number 1">
+    <input id="b" type="number" placeholder="Enter number 2">
+    <button onclick="add()">Add</button>
 
-<p id="ans"></p>
+    <p>Result: <span id="ans">0</span></p>
 
-<script>
-function add() {
-  var x = Number(document.getElementById("a").value);
-  var y = Number(document.getElementById("b").value);
-  document.getElementById("ans").innerHTML = x + y;
-}
-</script>
+    <script>
+    function add() {
+        // Adding basic validation
+        const valA = document.getElementById("a").value;
+        const valB = document.getElementById("b").value;
+        
+        if (valA === "" || valB === "") {
+            document.getElementById("ans").innerHTML = "Please enter both numbers";
+            return;
+        }
+
+        const x = Number(valA);
+        const y = Number(valB);
+        document.getElementById("ans").innerHTML = x + y;
+    }
+    </script>
 
 </body>
 </html>
-
